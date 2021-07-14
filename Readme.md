@@ -8,6 +8,7 @@
 - john the ripper
 - enum4linux => this one i cant run on my mac. so i run it via my cloud machine running linux
 - hydra => this is the alternative for enum4linux.
+- johntheripper / john
 
 #password list that i use from :
 - https://github.com/geovedi/indonesian-wordlist
@@ -17,3 +18,4 @@
 #Some knowledge :
 - you can start and stop service in windows by using sc start/stop. this is useful to gain access priviledge from a noob services
 - in payload is my known payload, when there is none of those working. use google and your head.
+- attackbox passwordlist path : /root/Desktop/wordlists

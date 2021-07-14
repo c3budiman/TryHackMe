@@ -11,3 +11,8 @@ hydra -l Elliot -P wordl.txt 10.10.203.64 http-post-form '/wp-login.php:log=^USE
 ## spin up rdp
 
 xfreerdp /u:username /v:host
+
+
+## Reverse SSH Tunnel 
+- ss -tulpn
+- ssh -L 10000:localhost:10000 <username>@<ip>
