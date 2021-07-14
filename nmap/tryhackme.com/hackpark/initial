@@ -1,0 +1,44 @@
+# Nmap 7.91 scan initiated Tue Jul 13 09:31:40 2021 as: nmap -sC -sV -oN nmap/initial 10.10.51.229
+Nmap scan report for 10.10.51.229
+Host is up (0.20s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE            VERSION
+80/tcp   open  http               Microsoft IIS httpd 8.5
+| http-methods: 
+|_  Potentially risky methods: TRACE
+| http-robots.txt: 6 disallowed entries 
+| /Account/*.* /search /search.aspx /error404.aspx 
+|_/archive /archive.aspx
+|_http-server-header: Microsoft-IIS/8.5
+|_http-title: hackpark | hackpark amusements
+3389/tcp open  ssl/ms-wbt-server?
+| rdp-ntlm-info: 
+|   Target_Name: HACKPARK
+|   NetBIOS_Domain_Name: HACKPARK
+|   NetBIOS_Computer_Name: HACKPARK
+|   DNS_Domain_Name: hackpark
+|   DNS_Computer_Name: hackpark
+|   Product_Version: 6.3.9600
+|_  System_Time: 2021-07-13T02:35:11+00:00
+| ssl-cert: Subject: commonName=hackpark
+| Not valid before: 2021-07-12T01:55:28
+|_Not valid after:  2022-01-11T01:55:28
+|_ssl-date: 2021-07-13T02:35:15+00:00; 0s from scanner time.
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jul 13 09:35:16 2021 -- 1 IP address (1 host up) scanned in 216.16 seconds
+
+
+Robots.txt :
+User-agent: *
+Disallow: /Account/*.*
+Disallow: /search
+Disallow: /search.aspx
+Disallow: /error404.aspx
+Disallow: /archive
+Disallow: /archive.aspx
+
+#Remove the '#' character below and replace example.com with your own website address.
+#sitemap: http://example.com/sitemap.axd 
+# WebMatrix 1.0
