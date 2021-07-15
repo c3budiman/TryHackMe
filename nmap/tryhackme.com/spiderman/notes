@@ -1,0 +1,5 @@
+john cred.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=bcrypt
+
+hashcat cred /usr/share/wordlists/rockyou.txt.gz
+
+john --format=bcrypt --wordlist=/Users/c3budiman/Hacking/wordlist/rockyou.txt cred 

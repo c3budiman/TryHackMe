@@ -1,0 +1,25 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.115.57
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                gobuster/medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2021/07/14 20:29:18 Starting gobuster in directory enumeration mode
+===============================================================
+/admin                (Status: 301) [Size: 312] [--> http://10.10.115.57/admin/]
+/css                  (Status: 301) [Size: 310] [--> http://10.10.115.57/css/]  
+/js                   (Status: 301) [Size: 309] [--> http://10.10.115.57/js/]   
+/config               (Status: 301) [Size: 313] [--> http://10.10.115.57/config/]
+/ai                   (Status: 301) [Size: 309] [--> http://10.10.115.57/ai/]    
+/squirrelmail         (Status: 301) [Size: 319] [--> http://10.10.115.57/squirrelmail/]
+
+[!] Keyboard interrupt detected, terminating.
+===============================================================
+2021/07/14 20:45:22 Finished
+===============================================================

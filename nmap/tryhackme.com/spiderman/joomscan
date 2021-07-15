@@ -1,0 +1,73 @@
+    ____  _____  _____  __  __  ___   ___    __    _  _ 
+   (_  _)(  _  )(  _  )(  \/  )/ __) / __)  /__\  ( \( )
+  .-_)(   )(_)(  )(_)(  )    ( \__ \( (__  /(__)\  )  ( 
+  \____) (_____)(_____)(_/\/\_)(___/ \___)(__)(__)(_)\_)
+                        (1337.today)
+   
+    --=[OWASP JoomScan
+    +---++---==[Version : 0.0.7
+    +---++---==[Update Date : [2018/09/23]
+    +---++---==[Authors : Mohammad Reza Espargham , Ali Razmjoo
+    --=[Code name : Self Challenge
+    @OWASP_JoomScan , @rezesp , @Ali_Razmjo0 , @OWASP
+
+Processing http://10.10.241.121 ...
+
+
+
+[+] FireWall Detector
+[++] Firewall not detected
+
+[+] Detecting Joomla Version
+[++] Joomla 3.7.0
+
+[+] Core Joomla Vulnerability
+[++] Target Joomla core is not vulnerable
+
+[+] Checking Directory Listing
+[++] directory has directory listing : 
+http://10.10.241.121/administrator/components
+http://10.10.241.121/administrator/modules
+http://10.10.241.121/administrator/templates
+http://10.10.241.121/images/banners
+
+
+[+] Checking apache info/status files
+[++] Readable info/status files are not found
+
+[+] admin finder
+[++] Admin page : http://10.10.241.121/administrator/
+
+[+] Checking robots.txt existing
+[++] robots.txt is found
+path : http://10.10.241.121/robots.txt 
+
+Interesting path found from robots.txt
+http://10.10.241.121/joomla/administrator/
+http://10.10.241.121/administrator/
+http://10.10.241.121/bin/
+http://10.10.241.121/cache/
+http://10.10.241.121/cli/
+http://10.10.241.121/components/
+http://10.10.241.121/includes/
+http://10.10.241.121/installation/
+http://10.10.241.121/language/
+http://10.10.241.121/layouts/
+http://10.10.241.121/libraries/
+http://10.10.241.121/logs/
+http://10.10.241.121/modules/
+http://10.10.241.121/plugins/
+http://10.10.241.121/tmp/
+
+
+[+] Finding common backup files name
+[++] Backup files are not found
+
+[+] Finding common log files name
+[++] error log is not found
+
+[+] Checking sensitive config.php.x file
+[++] Readable config files are not found
+
+
+Your Report : reports/10.10.241.121/

