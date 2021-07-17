@@ -17,3 +17,9 @@ nmap --script=/usr/local/Cellar/nmap/7.91/share/nmap/scripts/smb-enum-shares.nse
 ## gobuster
 
 gobuster dir -u http://10.10.115.57 -w gobuster/medium.txt > nmap/gobuster
+gobuster dir -u http://10.10.115.126 -w gobuster/medium.txt > nmap/gobuster
+
+## wpscan
+
+wpscan --url http://10.10.115.126/blog
+wpscan --url http://10.10.115.126/blog -e u

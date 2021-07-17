@@ -1,0 +1,22 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.115.126
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                gobuster/medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2021/07/16 19:27:37 Starting gobuster in directory enumeration mode
+===============================================================
+/blog                 (Status: 301) [Size: 313] [--> http://10.10.115.126/blog/]
+/wordpress            (Status: 301) [Size: 318] [--> http://10.10.115.126/wordpress/]
+/javascript           (Status: 301) [Size: 319] [--> http://10.10.115.126/javascript/]
+/phpmyadmin           (Status: 301) [Size: 319] [--> http://10.10.115.126/phpmyadmin/]
+/server-status        (Status: 403) [Size: 278]                                       
+===============================================================
+2021/07/16 21:00:11 Finished
+===============================================================

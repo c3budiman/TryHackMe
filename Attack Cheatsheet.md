@@ -14,6 +14,7 @@ xfreerdp /u:username /v:host
 
 
 ## Reverse SSH Tunnel 
+
 - ss -tulpn
 - ssh -L 10000:localhost:10000 <username>@<ip>
 
@@ -28,3 +29,18 @@ xfreerdp /u:username /v:host
 - id_rsa
 - chmod +x backdoor
 - ./backdoor -a hash
+
+## find flag or file in windows 
+
+Get-ChildItem -Path C:\ -Include *interesting-file.txt* -File -Recurse -ErrorAction SilentlyContinue
+
+## Decode base64 in windows
+
+- certutil -decode "C:\Users\Administrator\Desktop\b64.txt" out.txt
+- Get-Content out.txt
+
+
+Get-Content %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+
+## hashcat
+hashcat -m 13100 -a 0 hash.txt /Users/c3budiman/Hacking/wordlist/rockyou.txt.gz --force
