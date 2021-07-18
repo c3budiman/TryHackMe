@@ -43,4 +43,7 @@ Get-ChildItem -Path C:\ -Include *interesting-file.txt* -File -Recurse -ErrorAct
 Get-Content %userprofile%\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
 
 ## hashcat
-hashcat -m 13100 -a 0 hash.txt /Users/c3budiman/Hacking/wordlist/rockyou.txt.gz --force
+hashcat -m 13100 -a 0 hash /root/Desktop/wordlists --force --self-test-disable
+
+## kerbrute
+python3 kerbrute/kerbrute.py userenum --dc CONTROLLER.local -d CONTROLLER.local wordlist/user.txt

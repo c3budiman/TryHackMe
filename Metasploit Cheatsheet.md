@@ -3,6 +3,9 @@
 ## start metasploit
 
 /opt/metasploit-framework/bin/msfconsole
+/opt/metasploit-framework/bin/
+/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 600
+
 
 ## search for exploit
 

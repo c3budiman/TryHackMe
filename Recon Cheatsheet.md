@@ -1,5 +1,9 @@
 # Recon CheatSheet
 
+## add host
+sudo nano /etc/hosts
+sudo killall -HUP mDNSResponder
+
 ## ping
 
 ping 10.10.40.72
