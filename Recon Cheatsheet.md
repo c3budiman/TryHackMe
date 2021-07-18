@@ -11,7 +11,7 @@ ping 10.10.40.72
 ## nmap
 
 mkdir nmap
-nmap -sC -sV -oN nmap/initial 10.10.115.57
+nmap -sC -sV -oN nmap/initial 10.10.102.134
 
 ## nmap with script example
 

